@@ -1,61 +1,61 @@
-# Social Media Node.js & Express API Project
+# Projet API Social Media avec Node.js & Express
 
-## Table of Contents
+## Table des Matières
 
 - [README](README.md)
-- [MongoDB Atlas Integration Guide](DATABASE.md)
-- [Post Collection Schema](POST.md)
-- [Chat Collection Schema](CHAT.md)
-- [User Collection Schema](USER.md)
-- [Activity Collection Schema](ACTIVTY.md)
+- [Guide d'Intégration MongoDB Atlas](DATABASE.md)
+- [Schéma de la Collection Post](POST.md)
+- [Schéma de la Collection Chat](CHAT.md)
+- [Schéma de la Collection Utilisateur](USER.md)
+- [Schéma de la Collection Activité](ACTIVTY.md)
 
 ---
 
-## Overview
+## Aperçu
 
-This project is a social media backend built using Node.js and Express. It includes RESTful APIs for user management, posts, comments, and more. The project is designed to support a dynamic social media application with essential backend features such as user authentication, media uploads, and role-based access.
-
----
-
-## Features
-
-- **User Authentication**: Registration, login, and JWT-based authentication.
-- **Posts & Comments**: Users can create, read, update, and delete posts and comments.
-- **Middleware**: Custom middleware for authentication, error handling, and request logging.
-- **Logging**: Logs are maintained for server activities.
-- **Content Moderation**: Integrated Google Vision API and Cloudinary WebPurify for detecting and preventing uploads of inappropriate content.
-- **API Documentation**: Well-documented API endpoints for easy integration.
+Ce projet est un backend de médias sociaux construit avec Node.js et Express. Il inclut des API RESTful pour la gestion des utilisateurs, des publications, des commentaires et plus encore. Le projet est conçu pour supporter une application de médias sociaux dynamique avec des fonctionnalités backend essentielles telles que l'authentification des utilisateurs, le téléchargement de médias et le contrôle d'accès basé sur les rôles.
 
 ---
 
-## Project Structure
+## Fonctionnalités
 
-- `api/` - Contains route definitions for users, posts, and other features.
-- `config/` - Configuration files for database connections and environment variables.
-- `middlewares/` - Middleware logic for authentication, error handling, etc.
-- `services/` - Business logic abstracted into services.
-- `data/` - Placeholder for data-related operations.
-- `logs/` - Server log files.
-- `public/` - Static assets.
-- `server.js` - The main server file to start the Express app.
+- **Authentification Utilisateur** : Inscription, connexion et authentification basée sur JWT.
+- **Publications & Commentaires** : Les utilisateurs peuvent créer, lire, mettre à jour et supprimer des publications et des commentaires.
+- **Middleware** : Middleware personnalisé pour l'authentification, la gestion des erreurs et la journalisation des requêtes.
+- **Journalisation** : Les logs sont maintenus pour les activités du serveur.
+- **Modération de Contenu** : Intégration de l'API Google Vision et Cloudinary WebPurify pour détecter et empêcher le téléchargement de contenu inapproprié.
+- **Documentation API** : Endpoints d'API bien documentés pour une intégration facile.
 
 ---
 
-## Getting Started
+## Structure du Projet
 
-1. Clone the repository:
+- `api/` - Contient les définitions des routes pour les utilisateurs, les publications et autres fonctionnalités.
+- `config/` - Fichiers de configuration pour les connexions à la base de données et les variables d'environnement.
+- `middlewares/` - Logique middleware pour l'authentification, la gestion des erreurs, etc.
+- `services/` - Logique métier abstraite en services.
+- `data/` - Espace réservé pour les opérations liées aux données.
+- `logs/` - Fichiers de logs du serveur.
+- `public/` - Assets statiques.
+- `server.js` - Le fichier serveur principal pour démarrer l'application Express.
+
+---
+
+## Pour Commencer
+
+1. Cloner le dépôt :
 
    ```sh
-   git clone https://github.com/shlomiNugarker/social-media-node-express.git
+   git clone https://github.com/benalgodev/React-Social-Media-App-.git
    ```
 
-2. Navigate to the project directory:
+2. Naviguer dans le répertoire du projet :
 
    ```sh
-   cd social-media-node-express-main
+   cd Social-Network-Backend
    ```
 
-3. Install dependencies:
+3. Installer les dépendances :
    ```sh
    npm install
    ```
@@ -64,33 +64,32 @@ This project is a social media backend built using Node.js and Express. It inclu
 
 ## Configuration
 
-- Create a `.env` file in the root directory and provide the following environment variables:
+- Créer un fichier `.env` dans le répertoire racine et fournir les variables d'environnement suivantes :
 
   ```env
-  DB_URI=your_mongodb_uri_here
+  DB_URI=votre_uri_mongodb_ici
   REACT_APP_GOOGLE_MAP_KEY=
-  TOKEN_SECRET=your_jwt_secret
-  CLOUD_NAME=your_cloud_name
-  CLOUD_API_KEY=your_api_key
-  CLOUD_API_SECRET=your_api_secret
+  TOKEN_SECRET=votre_secret_jwt
+  CLOUD_NAME=votre_nom_cloud
+  CLOUD_API_KEY=votre_cle_api
+  CLOUD_API_SECRET=votre_secret_api
   
   GOOGLE_PRIVATE_KEY=
   GOOGLE_CLIENT_EMAIL=
   GOOGLE_PROJECT_ID=
-
   ```
 
 ---
 
-## Running the Server
+## Démarrage du Serveur
 
-To start the server in development mode:
+Pour démarrer le serveur en mode développement :
 
 ```sh
 npm run dev
 ```
 
-To start the server in production mode:
+Pour démarrer le serveur en mode production :
 
 ```sh
 npm start
@@ -98,68 +97,65 @@ npm start
 
 ---
 
-## API Endpoints
+## Endpoints de l'API
 
-### Activity Routes
+### Routes des Activités
 
-- **GET /** - Fetch all activities
-- **POST /** - Add a new activity
-- **PUT /:id** - Update an activity by ID
-- **GET /length** - Get the number of activities
+- **GET /** - Récupérer toutes les activités
+- **POST /** - Ajouter une nouvelle activité
+- **PUT /:id** - Mettre à jour une activité par ID
+- **GET /length** - Obtenir le nombre d'activités
 
-### Auth Routes
+### Routes d'Authentification
 
-- **POST /login** - User login
-- **POST /signup** - User signup
-- **POST /logout** - User logout
+- **POST /login** - Connexion utilisateur
+- **POST /signup** - Inscription utilisateur
+- **POST /logout** - Déconnexion utilisateur
 
-### Chat Routes
+### Routes de Chat
 
-- **GET /** - Fetch all chats
-- **GET /:id** - Fetch a chat by ID
-- **POST /** - Create a new chat
-- **PUT /:id** - Update a chat by ID
-- **DELETE /:id** - Delete a chat by ID
+- **GET /** - Récupérer tous les chats
+- **GET /:id** - Récupérer un chat par ID
+- **POST /** - Créer un nouveau chat
+- **PUT /:id** - Mettre à jour un chat par ID
+- **DELETE /:id** - Supprimer un chat par ID
 
-### Comment Routes
+### Routes des Commentaires
 
-- **GET /** - Fetch all comments
-- **GET /:id** - Fetch a comment by ID
-- **POST /** - Add a new comment
-- **PUT /:id** - Update a comment by ID
-- **DELETE /:id** - Delete a comment by ID
+- **GET /** - Récupérer tous les commentaires
+- **GET /:id** - Récupérer un commentaire par ID
+- **POST /** - Ajouter un nouveau commentaire
+- **PUT /:id** - Mettre à jour un commentaire par ID
+- **DELETE /:id** - Supprimer un commentaire par ID
 
-### Post Routes
+### Routes des Publications
 
-- **GET /** - Fetch all posts
-- **GET /length** - Fetch the number of posts
-- **GET /:id** - Fetch a post by ID
-- **POST /** - Create a new post
-- **PUT /:id** - Update a post by ID
-- **DELETE /:id** - Delete a post by ID
+- **GET /** - Récupérer toutes les publications
+- **GET /length** - Récupérer le nombre de publications
+- **GET /:id** - Récupérer une publication par ID
+- **POST /** - Créer une nouvelle publication
+- **PUT /:id** - Mettre à jour une publication par ID
+- **DELETE /:id** - Supprimer une publication par ID
 
-### User Routes
+### Routes des Utilisateurs
 
-- **GET /** - Fetch all users
-- **GET /:id** - Fetch a user by ID
-- **POST /** - Add a new user
-- **PUT /:id** - Update a user by ID
-- **DELETE /:id** - Delete a user by ID
+- **GET /** - Récupérer tous les utilisateurs
+- **GET /:id** - Récupérer un utilisateur par ID
+- **POST /** - Ajouter un nouvel utilisateur
+- **PUT /:id** - Mettre à jour un utilisateur par ID
+- **DELETE /:id** - Supprimer un utilisateur par ID
 
 ---
 
 ## Frontend
 
-The frontend for this project can be found at [here](https://github.com/shlomiNugarker/social-media-react?tab=readme-ov-file).
+Le frontend pour ce projet peut être trouvé [ici](https://github.com/benalgodev/React-Social-Media-App-).
 
 ---
 
 ## Contributions
 
-Feel free to submit pull requests for new features, bug fixes, or improvements. Please ensure all tests pass before submitting.
+N'hésitez pas à soumettre des pull requests pour de nouvelles fonctionnalités, des corrections de bugs ou des améliorations. Veuillez vous assurer que tous les tests passent avant de soumettre.
 
 ---
 
-## License
-
-This project is licensed under the MIT License.
