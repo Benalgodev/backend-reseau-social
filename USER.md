@@ -1,110 +1,95 @@
-# User Collection Schema
+# Schéma de la Collection Utilisateur
 
-The `user` collection represents users in the social media application. Below is a detailed explanation of its structure and fields:
+La collection `user` représente les utilisateurs dans l'application de médias sociaux. Voici une explication détaillée de sa structure et de ses champs :
 
-## Schema Structure
+## Structure du Schéma
 
-### Fields
+### Champs
 
 1. **`username`** (String)
-
-   - The unique username of the user.
+   - Le nom d'utilisateur unique de l'utilisateur.
 
 2. **`password`** (String)
-
-   - The hashed password of the user.
+   - Le mot de passe hashé de l'utilisateur.
 
 3. **`profession`** (String)
-
-   - The profession or job title of the user.
+   - La profession ou le titre professionnel de l'utilisateur.
 
 4. **`fullname`** (String)
-
-   - The full name of the user.
+   - Le nom complet de l'utilisateur.
 
 5. **`isAdmin`** (Boolean)
-
-   - Indicates if the user has administrative privileges.
+   - Indique si l'utilisateur a des privilèges administratifs.
 
 6. **`age`** (Number)
-
-   - The age of the user.
+   - L'âge de l'utilisateur.
 
 7. **`createdAt`** (Number)
+   - Horodatage indiquant quand l'utilisateur a été créé.
 
-   - Timestamp indicating when the user was created.
-
-8. **`connections`** (Array of Objects)
-
-   - Represents the user's connections with other users.
-   - Each object contains:
-     - `userId` (String): The ID of the connected user.
-     - `fullname` (String): The full name of the connected user.
-     - `connected` (Number): Timestamp indicating when the connection was established.
+8. **`connections`** (Tableau d'Objets)
+   - Représente les connexions de l'utilisateur avec d'autres utilisateurs.
+   - Chaque objet contient :
+     - `userId` (String) : L'ID de l'utilisateur connecté.
+     - `fullname` (String) : Le nom complet de l'utilisateur connecté.
+     - `connected` (Number) : Horodatage indiquant quand la connexion a été établie.
 
 9. **`following`** (Array)
-
-   - List of user IDs the user is following.
+   - Liste des IDs des utilisateurs que l'utilisateur suit.
 
 10. **`followers`** (Array)
-
-    - List of user IDs following the user.
+    - Liste des IDs des utilisateurs qui suivent l'utilisateur.
 
 11. **`gender`** (String)
-
-    - The gender of the user (e.g., "male", "female").
+    - Le genre de l'utilisateur (ex: "male", "female", "homme", "femme").
 
 12. **`phone`** (String)
-
-    - The phone number of the user.
+    - Le numéro de téléphone de l'utilisateur.
 
 13. **`birthDate`** (String)
-
-    - The birth date of the user in ISO format (YYYY-MM-DD).
+    - La date de naissance de l'utilisateur au format ISO (AAAA-MM-JJ).
 
 14. **`email`** (String)
-
-    - The email address of the user.
+    - L'adresse email de l'utilisateur.
 
 15. **`bg`** (String)
-
-    - URL of the user's background image.
+    - URL de l'image de fond de l'utilisateur.
 
 16. **`imgUrl`** (String)
-    - URL of the user's profile image.
+    - URL de l'image de profil de l'utilisateur.
 
 ---
 
-## Example Document
+## Exemple de Document
 
 ```json
 {
-  "username": "shlomi123",
+  "username": "benalgodev123",
   "password": "$2b$10$fgsK0Yomf8Vdw3.bfIXJuOd/axCVx38HuYX9E.Bh7KS2Ik4kLd2zu",
-  "profession": "Full-Stack developer",
-  "fullname": "Shlomi Nugarker",
+  "profession": "Développeur Full-Stack",
+  "fullname": "Benjamin Algodev",
   "isAdmin": false,
-  "age": 30,
+  "age": 28,
   "createdAt": 1659507323661,
   "connections": [
     {
       "userId": "62f138ee9f531ee7a0a6f276",
-      "fullname": "eliya nugarker",
+      "fullname": "Alice Martin",
       "connected": 4235353
     },
     {
       "userId": "62f1fd355e2c0e39215035bb",
-      "fullname": "Michal Dam",
+      "fullname": "Pierre Dubois",
       "connected": 42353353
     }
   ],
   "following": [],
   "followers": [],
   "gender": "male",
-  "phone": "0529526762",
-  "birthDate": "1987-12-14",
-  "email": "sfs@dg.ngsdgfadf",
+  "phone": "0612345678",
+  "birthDate": "1995-05-15",
+  "email": "contact@benalgodev.com",
   "bg": "https://images.unsplash.com/photo-1556262298-e85892643712?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-  "imgUrl": "http://res.cloudinary.com/duajg3ah1/image/upload/v1660763357/shlomiN_mewit4.jpg"
+  "imgUrl": "http://res.cloudinary.com/duajg3ah1/image/upload/v1660763357/benalgodev_profile.jpg"
 }
 ```
