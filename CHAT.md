@@ -1,16 +1,16 @@
-# Chat Schema
+# Schéma de Chat
 
-## Overview
+## Aperçu
 
-This document describes the schema structure for a chat application, including users, messages, and metadata.
+Ce document décrit la structure du schéma pour une application de chat, incluant les utilisateurs, les messages et les métadonnées.
 
 ---
 
-## Schema Structure
+## Structure du Schéma
 
-### 1. Chat Details
+### 1. Détails du Chat
 
-The root of the chat schema contains general information about the chat:
+La racine du schéma de chat contient des informations générales sur la conversation :
 
 ```json
 {
@@ -21,57 +21,57 @@ The root of the chat schema contains general information about the chat:
 }
 ```
 
-- **`_id`**: Unique identifier for the chat.
-- **`createdAt`**: Timestamp of chat creation.
-- **`userId`**: Identifier for the first user.
-- **`userId2`**: Identifier for the second user.
+- **`_id`** : Identifiant unique pour le chat.
+- **`createdAt`** : Horodatage de la création du chat.
+- **`userId`** : Identifiant du premier utilisateur.
+- **`userId2`** : Identifiant du deuxième utilisateur.
 
 ---
 
 ### 2. Messages
 
-An array of messages exchanged in the chat:
+Un tableau des messages échangés dans le chat :
 
 ```json
 "messages": [
   {
     "_id": "Udd5m7BEYplZNbFwq51CAYYg",
-    "txt": "hello",
+    "txt": "bonjour",
     "userId": "630f0c02f70397ad66d5fbdc",
     "createdAt": 1733160138095
   },
   {
     "_id": "z3gMgS3Tlvcqad5rRBg8WGUa",
-    "txt": "hii",
+    "txt": "salut",
     "userId": "630f0c02f70397ad66d5fbdc",
     "createdAt": 1733247245880
   }
 ]
 ```
 
-#### Fields:
+#### Champs :
 
-- **`_id`**: Unique identifier for the message.
-- **`txt`**: Content of the message.
-- **`userId`**: Identifier of the message sender.
-- **`createdAt`**: Timestamp of when the message was sent.
+- **`_id`** : Identifiant unique pour le message.
+- **`txt`** : Contenu du message.
+- **`userId`** : Identifiant de l'expéditeur du message.
+- **`createdAt`** : Horodatage indiquant quand le message a été envoyé.
 
 ---
 
-### 3. Users
+### 3. Utilisateurs
 
-An array of users participating in the chat:
+Un tableau des utilisateurs participant au chat :
 
 ```json
 "users": [
-  "Guest",
+  "Invité",
   null
 ]
 ```
 
-#### Fields:
+#### Champs :
 
-- **`users[0]`**: Name or identifier of the first user.
-- **`users[1]`**: Name or identifier of the second user (can be `null` if not specified).
+- **`users[0]`** : Nom ou identifiant du premier utilisateur.
+- **`users[1]`** : Nom ou identifiant du deuxième utilisateur (peut être `null` si non spécifié).
 
 ---
