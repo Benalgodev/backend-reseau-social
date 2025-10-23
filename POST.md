@@ -1,57 +1,57 @@
-# Post Collection Schema
+# Schéma de la Collection Post
 
-The `post` collection represents social media posts in the database. Below is a detailed explanation of its structure and fields:
+La collection `post` représente les publications de médias sociaux dans la base de données. Voici une explication détaillée de sa structure et de ses champs :
 
-## Schema Structure
+## Structure du Schéma
 
-### Fields
+### Champs
 
 1. **`userId`** (String)
-   - The ID of the user who created the post.
+   - L'ID de l'utilisateur qui a créé la publication.
 
 2. **`title`** (String)
-   - The title of the post (optional).
+   - Le titre de la publication (optionnel).
 
 3. **`body`** (String)
-   - The main content of the post.
+   - Le contenu principal de la publication.
 
-4. **`reactions`** (Array of Objects)
-   - Represents user reactions to the post.
-   - Each object contains:
-     - `userId` (String): The ID of the reacting user.
-     - `fullname` (String): The full name of the reacting user.
-     - `reaction` (String): Type of reaction (e.g., "like").
+4. **`reactions`** (Tableau d'Objets)
+   - Représente les réactions des utilisateurs à la publication.
+   - Chaque objet contient :
+     - `userId` (String) : L'ID de l'utilisateur qui a réagi.
+     - `fullname` (String) : Le nom complet de l'utilisateur qui a réagi.
+     - `reaction` (String) : Type de réaction (ex: "like", "j'aime").
 
 5. **`createdAt`** (Number)
-   - Timestamp indicating when the post was created.
+   - Horodatage indiquant quand la publication a été créée.
 
 6. **`imgBodyUrl`** (String)
-   - URL of the image attached to the post (optional).
+   - URL de l'image jointe à la publication (optionnel).
 
 7. **`shares`** (Array)
-   - List of user IDs who shared the post.
+   - Liste des IDs des utilisateurs qui ont partagé la publication.
 
-8. **`comments`** (Array of Objects)
-   - Represents comments on the post.
-   - Each object contains:
-     - `_id` (String): Unique ID of the comment.
-     - `userId` (String): The ID of the user who made the comment.
-     - `postId` (String): The ID of the post the comment belongs to.
-     - `txt` (String): Text content of the comment.
-     - `reactions` (Array of Objects): Reactions to the comment, similar to the `reactions` field.
-     - `replies` (Array of Objects): Replies to the comment, each with fields like `_id`, `userId`, `txt`, and `createdAt`.
-     - `createdAt` (Number): Timestamp of when the comment was created.
+8. **`comments`** (Tableau d'Objets)
+   - Représente les commentaires sur la publication.
+   - Chaque objet contient :
+     - `_id` (String) : ID unique du commentaire.
+     - `userId` (String) : L'ID de l'utilisateur qui a fait le commentaire.
+     - `postId` (String) : L'ID de la publication à laquelle le commentaire appartient.
+     - `txt` (String) : Contenu textuel du commentaire.
+     - `reactions` (Tableau d'Objets) : Réactions au commentaire, similaire au champ `reactions`.
+     - `replies` (Tableau d'Objets) : Réponses au commentaire, chacune avec des champs comme `_id`, `userId`, `txt` et `createdAt`.
+     - `createdAt` (Number) : Horodatage de la création du commentaire.
 
 ---
 
-## Example Document
+## Exemple de Document
 ```json
 {
   "userId": "62ea127beb6ee5f8058fd56e",
   "title": "",
-  "body": "Example post content",
+  "body": "Contenu d'exemple de publication",
   "reactions": [
-    {"userId": "62f1fd355e2c0e39215035bb", "fullname": "John Doe", "reaction": "like"}
+    {"userId": "62f1fd355e2c0e39215035bb", "fullname": "Jean Dupont", "reaction": "like"}
   ],
   "createdAt": 1660681023611,
   "imgBodyUrl": "",
@@ -61,9 +61,9 @@ The `post` collection represents social media posts in the database. Below is a 
       "_id": "comment123",
       "userId": "62ea127beb6ee5f8058fd56e",
       "postId": "post123",
-      "txt": "This is a comment",
+      "txt": "Ceci est un commentaire",
       "reactions": [
-        {"userId": "62f201535e2c0e39215035bf", "fullname": "Jane Smith", "reaction": "like"}
+        {"userId": "62f201535e2c0e39215035bf", "fullname": "Marie Martin", "reaction": "like"}
       ],
       "replies": [],
       "createdAt": 1660724533161
@@ -71,4 +71,3 @@ The `post` collection represents social media posts in the database. Below is a 
   ]
 }
 ```
-
